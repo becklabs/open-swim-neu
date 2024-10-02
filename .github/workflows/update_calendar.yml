@@ -5,12 +5,23 @@ on:
     - cron: '0 0 * * 1'  # Runs every Monday at midnight UTC
   workflow_dispatch:  # Allows manual triggering
 
+permissions:
+  contents: write  # Grants write permission to the repository contents
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      with:
+        persist-credentials: false  # Disable automatic token authentication
+
+    - name: Set up Git user
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -26,9 +37,11 @@ jobs:
         python scripts/generate_calendar.py
 
     - name: Commit and push changes
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_ACTOR: ${{ github.actor }}
+        GITHUB_REPOSITORY: ${{ github.repository }}
       run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
         git add calendars/open_swim_schedule.ics
-        git commit -m "Update open swim schedule" || echo "No changes to commit"
-        git push origin main
+        git commit -m "Update open swim schedule" || exit 0
+        git push "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:main
