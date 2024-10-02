@@ -44,6 +44,10 @@ def create_ics_file(events: List[Dict], filename: str) -> None:
     cal.add("prodid", "-//Northeastern Open Swim Schedule//mxm.dk//")
     cal.add("version", "2.0")
 
+    cal.add('X-WR-CALNAME', 'Northeastern Open Swim Schedule')  
+    cal.add('X-WR-TIMEZONE', 'America/New_York')  
+    cal.add('X-APPLE-CALENDAR-COLOR', '#1E90FF')  # DodgerBlue color
+
     timezone = pytz.timezone("America/New_York")
 
     for event in events:
