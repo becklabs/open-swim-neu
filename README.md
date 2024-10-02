@@ -12,7 +12,7 @@ Periodically runs a Github Action to fetch the latest open swim events from Nort
 https://becklabs.github.io/open-swim-neu/calendars/open_swim_schedule.ics
 ```
 
-### Subscription Instructions for Common Calendar Apps
+## Subscription Instructions for Common Calendar Apps
 
 #### Google Calendar
 
