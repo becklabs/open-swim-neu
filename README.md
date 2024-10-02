@@ -3,7 +3,7 @@
 ## Overview
 Hosts a subscribable calendar for Northeastern University's Open Swim Schedule.
 
-Periodically runs a Github Action to fetch the latest open swim events from Northeastern's events API and generate an `.ics` calendar file from them. The calendar is served via GitHub Pages, making it easy to access and subscribe to.
+Periodically runs a Github Action to fetch the latest open swim events from Northeastern's events API and generate an `.ics` calendar file from them. The calendar is then served via GitHub Pages.
 
 ### Calendar URL
 ```
