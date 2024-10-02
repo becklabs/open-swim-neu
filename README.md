@@ -1,6 +1,4 @@
-# Open Swim NEU
-
-![Open Swim](https://becklabs.github.io/northeastern-open-swim-calendar/banner.jpg)
+# Open Swim NEU 🏊‍♂️
 
 ## Overview
 Hosts a subscribable calendar for Northeastern University's Open Swim Schedule.
