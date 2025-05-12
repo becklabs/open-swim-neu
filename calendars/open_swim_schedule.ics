@@ -1,7 +1,7 @@
 BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//Northeastern Open Swim Schedule//mxm.dk//
-X-APPLE-CALENDAR-COLOR:#1E90FF
 X-WR-CALNAME:Northeastern Open Swim Schedule
+X-APPLE-CALENDAR-COLOR:#1E90FF
 X-WR-TIMEZONE:America/New_York
 END:VCALENDAR
